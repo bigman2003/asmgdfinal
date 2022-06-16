@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Giỏ hàng</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <style>
+       .container-1{width: 100%;/* margin: auto*/; background: darkgrey; padding: 20px;font-size: 1.2em;}
+       table{width: 100%; border-collapse: collapse;}
+       th, td{border: 1px solid black; padding: 6px; text-align: center;}
+       button{width: 60px; height: 25px;}
+      /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+#web {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+
+header .top-header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background: gray;
+    align-items: center;
+    padding:0px 20px;
+}
+
+
+header .top-header .logo ion-icon {
+    width: 50px;
+    height: 50px;
+    color:#fff;
+    transition:0.5s all;
+}
+
+header .top-header .logo ion-icon:hover {
+    transform:rotate(39deg);
+}
+header .top-header #menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+header .top-header #menu .item {
+    margin:0px 30px;
+    color:#fff;
+    transition:color 0.4s;
+}
+header .top-header #menu .item a{
+    color: #fff;
+    margin: 0px 30px;
+    transition: color 0.4s;
+    list-style: none;
+    text-decoration: none;
+}
+header .top-header #menu .item:hover {
+    color:rgb(0, 183, 255);
+}
+header .top-header #menu .item a:hover{
+    color:rgb(0, 183, 255) ;
+} 
+.actions {
+    display: flex;
+    width: 300px;
+    color:#fff;
+}
+.actions div {
+    margin:0px 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border:2px solid #fff;
+}
+.actions div ion-icon {
+    font-size:20px;
+
+}
+
+.actions .cart {
+    position:relative;
+}
+.actions .cart a icon-icon{
+    text-decoration: none;
+}
+.actions .cart small {
+    position:absolute;
+    top:-12px;
+    right:-5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer {
+    width: 100%;
+    height: 400px;
+    background:rgb(27, 27, 27);
+}
+footer .container {
+    width: 90%;
+    /* background:rgb(0, 0, 0); */
+    margin:0px auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .container .footer-box {
+    color:#fff;
+    padding-top:40px;
+    width: 500px;
+    height: 100%;
+
+
+}
+footer .container .footer-box h2 {
+    text-align: center;
+}
+footer .container .footer-box ul
+{
+    list-style: none;
+    padding:0px 20px;
+    margin-top:10px;
+    
+}
+footer .container .footer-box ul li {
+    margin:20px 0px;
+}
+footer .container .footer-box .contact {
+    width: 200px;
+    height: 40px;
+    background:#0b111f;
+    color:#fff;
+}
+footer .container .footer-box:nth-child(2) ul li  {
+     display: flex;
+    /* justify-content: center; */
+    align-items: center;
+} 
+
+footer .container .footer-box:nth-child(2) ul li .icon {
+    width: 40px;
+    height: 40px;
+    background:rgb(0, 0, 0);
+    margin-right:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .container .footer-box:nth-child(2) ul li .icon ion-icon {
+    font-size:20px;
+}
+footer .container .footer-box:nth-child(3) ul li form {
+    position:relative;
+}
+footer .container .footer-box:nth-child(3) ul li form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 2px solid #fff;
+    color:#fff;
+}
+footer .container .footer-box:nth-child(3) ul li form button {
+    width: 200px;
+    height: 40px;
+    background:#fff;
+    outline:none;
+    margin-top:40px;
+    
+}
+footer .container .footer-box:nth-child(3) ul li form.success:before {
+    content:"";
+   width: 10px;
+   height: 20px;
+   position:absolute;
+   background-image:url('../img/success.png');
+   background-size: cover;
+   right:10px;
+   top:6px;
+   width: 30px;
+   height: 30px;
+
+}
+footer .container .footer-box:nth-child(3) ul li form.error:before {
+   content:"";
+   width: 10px;
+   height: 20px;
+   position:absolute;
+   background-image:url('../img/error.png');
+   background-size: cover;
+   right:10px;
+   top:6px;
+   width: 30px;
+   height: 30px;
+   
+}
+    </style>
+</head>
+<body>
+    <div id="web">
+        <header>
+
+            <div class="top-header">
+                <div class="logo">
+                    <img src="img/logogaming.webp" alt="" width="140px" height="100px">
+                </div>
+                <ul id="menu">
+                    <li class="item"><a href="index.html">Trang Chủ</a></li>
+                    
+                    <li class="item">Khuyến Mãi</li>
+                    <li class="item"><a href="login.html">Đăng Nhập</a></li>
+
+                </ul>
+                <div id="dongho"></div>
+                <script>
+                    document.getElementById("dongho").style.width = "200px"
+                    document.getElementById("dongho").style.fontSize = "1.2em"
+                    document.getElementById("dongho").style.backgroundColor = "gray"
+                    document.getElementById("dongho").style.color = "white"
+                    document.getElementById("dongho").style.padding = "10px"
+                    document.getElementById("dongho").style.textAlign = "center"
+                    function tg() {
+                        let now = new Date();
+                        let h, m, s;
+                        h = now.getHours();
+                        m = now.getMinutes();
+                        s = now.getSeconds();
+
+                        document.getElementById("dongho").innerText = `${h}: ${m} : ${s}`
+                    }
+                    function startStopDongHo() {
+                        if (dh == null) {
+                            dh = setInterval("tg()", 1000);
+                        } else {
+                            clearInterval(dh);
+                            dh = null;
+                        }
+                    }
+                    dh = setInterval("tg()", 1000);
+                </script>
+                <div class="actions">
+                    <div class="cart">
+                        <a href="giohang.html"><ion-icon name="cart-outline"></ion-icon></a>
+                        <small>5</small>
+                    </div>
+                    <div class="contact">
+                        <ion-icon name="call-outline">
+                        </ion-icon>
+                    </div>
+                    <div class="more">
+                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+    <div class="container-1">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="full"></th>
+                    <th>Tên sản phẩm</th>
+                    <th> Giá</th>
+                    <th>Mua</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bàn phím logitech g813</td>
+                    <td>250000</td>
+                    <td><button onclick="them(this)">Chọn</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bàn phím corsair k63</td>
+                    <td>1760000</td>
+                    <td><button onclick="them(this)">Chọn</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bàn phím mistel sleeker X-VIII Glaze blue </td>
+                    <td>1234566</td>
+                    <td><button onclick="them(this)">Chọn</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bàn phím IKBC W200</td>
+                    <td>1150000</td>
+                    <td><button onclick="them(this)">Chọn</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="chon" checked onchange="daott(this)"></td>
+                    <td>Bàn phím mistel X8 bumblebee</td>
+                    <td>950000</td>
+                    <td><button onclick="them(this)">Chọn</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr style="margin: 20px 0;">
+        <h1 class="cap">GIỎ HÀNG CỦA BẠN</h1>
+        <table id="cart">
+            
+    
+            
+        </table>
+        <h3>Tổng Số Tiền : $<span id="tong">0</span></h3>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-box" id="about">
+                <h2>VỀ CHÚNG TÔI</h2>
+                <ul>
+                    <li>
+                      Thiết Kế Bởi Minh Đông
+                    </li>
+                    <li>
+                        <button class="contact">Liên Hệ Ngay</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h2>THÔNG TIN LIÊN HỆ</h2>
+                <ul>
+                    <li>
+                        <div class="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+
+                        Công viên phần mềm Quang Trung
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </div>
+                        0123776455
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        donghnmps20875@fpt.edu.vn
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h2>ĐĂNG KÝ</h2>
+                <ul>
+                    <li>
+                        <form action="">
+                            <input type="text" placeholder="Nhập Email" id="email">
+                            <button> Nhận Thông Báo</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script src="giohang.js"></script>

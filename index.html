@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ASM </title>
+</head>
+<body>
+    <div id="web">
+        <header>
+
+            <div class="top-header">
+                <div class="logo">
+                    <img src="img/logogaming.webp" alt="" width="140px" height="100px">
+                </div>
+                <ul id="menu">
+                    <li class="item">Trang Chủ</li>
+                    <li class="item" ><a href="chitietsanpham.html">Sản Phẩm</a> </li>
+                    <li class="item"><a href="dangnhap.html">Đăng Nhập</a></li>
+
+                </ul>
+                <div id="dongho"></div>
+                <script>
+                    document.getElementById("dongho").style.width = "200px"
+                    document.getElementById("dongho").style.fontSize = "1.2em"
+                    document.getElementById("dongho").style.backgroundColor = "gray"
+                    document.getElementById("dongho").style.color = "white"
+                    document.getElementById("dongho").style.padding = "10px"
+                    document.getElementById("dongho").style.textAlign = "center"
+                    function tg() {
+                        let now = new Date();
+                        let h, m, s;
+                        h = now.getHours();
+                        m = now.getMinutes();
+                        s = now.getSeconds();
+
+                        document.getElementById("dongho").innerText = `${h}: ${m} : ${s}`
+                    }
+                    function startStopDongHo() {
+                        if (dh == null) {
+                            dh = setInterval("tg()", 1000);
+                        } else {
+                            clearInterval(dh);
+                            dh = null;
+                        }
+                    }
+                    dh = setInterval("tg()", 1000);
+                </script>
+                <div class="actions">
+                    <div class="cart">
+                        <a href="giohang.html"><ion-icon name="cart-outline"></ion-icon></a>
+                        <small>5</small>
+                    </div>
+                    <div class="contact">
+                        <ion-icon name="call-outline">
+                        </ion-icon>
+                    </div>
+                    <div class="more">
+                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="danhmuc">
+                <h2>Danh mục sản phẩm</h2>
+    <div id="categoryList">
+
+    </div>
+    <div class="cate">
+    <script>
+        var bookCategoryList = [" Bàn Phím gaming",
+        " Chuột gaming ",
+        " Lót chuột",
+        "Khác"];
+
+    </script>
+    </div>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="img/logo banphim.png" style="width: 100%" height="400px" />
+                  <div class="text">sale giá sốc</div>
+                </div>
+          
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="img/logo chuot.png" style="width: 100%" height="400px"/>
+                  <div class="text">sale giá sốc</div>
+                </div>
+          
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="img/logo giasoc.png" style="width: 100%" height="400px" />
+                  <div class="text">sale giá sốc</div>
+                </div>
+              </div>
+              <br />
+          
+              <div style="text-align: center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <script>
+                let slideIndex = 0;
+                showSlides();
+          
+                function showSlides() {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex - 1].style.display = "block";
+                  dots[slideIndex - 1].className += " active";
+                  setTimeout(showSlides, 4000); // Change image every 2 seconds
+                }
+              </script>
+              <h1 class="title">Sản Phẩm Của Chúng Tôi</h1>
+              <div class="container">
+                <ul id="list-products">
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim akko 3098N.webp" alt="">
+                        </div>
+                        <div class="size">
+                            
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim corsair k63 wireless.webp" alt="">
+                        </div>
+                        <div class="size">
+                            
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim corsair k70 rgb mk.2.webp" alt="">
+                        </div>
+                        <div class="size">
+                            
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim IKBC W200 wireless.webp" alt="">
+                        </div>
+                        <div class="size">
+                           
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim logitech g613 wireless.webp" alt="">
+                        </div>
+                        <div class="size">
+                            
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim logitech g813 rgb.webp" alt="">
+                        </div>
+                        <div class="size">
+                            
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim logitech g913.webp" alt="">
+                        </div>
+                        <div class="size">
+                           
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                    <li class="product">
+                        <div class="thumb">
+                            <img src="img/banphim mistel sleeker X-VIII Glaze blue.webp" alt="">
+                        </div>
+                        <div class="size">
+                           
+                        </div>
+                        <div class="price"> Giá : 250.000 VNĐ</div>
+                        <input type="number" placeholder="Số lượng" class="amount" min="1" max="10">
+                        <div class="book">Đặt</div>
+                    </li>
+                </ul>
+                <div class="more">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                </div>
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="footer-box" id="about">
+                        <h2>VỀ CHÚNG TÔI</h2>
+                        <ul>
+                            <li>
+                              Thiết Kế Bởi Minh Đông
+                            </li>
+                            <li>
+                                <button class="contact">Liên Hệ Ngay</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-box">
+                        <h2>THÔNG TIN LIÊN HỆ</h2>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <ion-icon name="location-outline"></ion-icon>
+                                </div>
+    
+                                Công viên phần mềm Quang trung
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                </div>
+                                0123776455
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                </div>
+                                donghnmps20875@fpt.edu.vn
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-box">
+                        <h2>ĐĂNG KÝ</h2>
+                        <ul>
+                            <li>
+                                <form action="">
+                                    <input type="text" placeholder="Nhập Email" id="email">
+                                    <button> Nhận Thông Báo</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+</body>
+</html>
+<script>
+    var v;
+    for (v of bookCategoryList){
+        var category = document.getElementById("categoryList");
+        var a = document.createElement("a");
+        category.appendChild(a);
+        var text = document.createTextNode(v);
+        a.appendChild(text);
+        a.setAttribute("href", v + ".html");
+        a.setAttribute("style", "display:block; color:white; text-decoration:none;; width:200px; height:auto; margin: 5px; background:gray; text-align: center; margin-top:10px; ");
+    }
+</script>
